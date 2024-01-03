@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:dmswl98/fully-type-safe-starter.git"
+    "url": "git@github.com:dmswl98/type-safe-fullstack-starter.git"
   },
   "scripts": {
     "build": "turbo build",

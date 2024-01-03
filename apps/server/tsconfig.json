@@ -1,0 +1,7 @@
+{
+  "extends": "@type-safe-fullstack-starter/typescript-config/nestjs.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./"
+  }
+}

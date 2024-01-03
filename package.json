@@ -1,20 +1,29 @@
 {
-  "name": "fully-type-safe-starter",
+  "name": "type-safe-fullstack-starter",
   "private": true,
+  "author": {
+    "name": "cje",
+    "url": "https://github.com/dmswl98",
+    "email": "chej098t@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dmswl98/fully-type-safe-starter.git"
+  },
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "turbo dev --parallel",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@type-safe-fullstack-starter/eslint-config-web": "workspace:*",
+    "@type-safe-fullstack-starter/typescript-config": "workspace:*",
     "prettier": "^3.1.0",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

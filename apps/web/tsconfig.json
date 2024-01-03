@@ -1,11 +1,17 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@type-safe-fullstack-starter/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@server/*": ["../server/src/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

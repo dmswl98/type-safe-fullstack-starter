@@ -11,8 +11,10 @@
     "url": "git@github.com:dmswl98/type-safe-fullstack-starter.git"
   },
   "scripts": {
-    "build": "turbo build",
     "dev": "turbo dev --parallel",
+    "build": "turbo build",
+    "build:server": "turbo build --filter=server",
+    "build:web": "turbo build --filter=web",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

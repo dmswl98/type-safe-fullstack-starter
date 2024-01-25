@@ -4,13 +4,6 @@ import { TrpcRouter } from './trpc.router';
 
 @Module({
   imports: [],
-  providers: [
-    TrpcService,
-    {
-      provide: TrpcRouter,
-      useFactory: (trpcService: TrpcService) => new TrpcRouter(trpcService),
-      inject: [TrpcService],
-    },
-  ],
+  providers: [TrpcService, TrpcRouter],
 })
 export class TrpcModule {}

@@ -4,7 +4,7 @@ import styles from './page.module.css';
 import { trpc } from 'app/_trpc/client';
 
 export default function Page() {
-  const greeting = trpc.greeting.useQuery({ name: 'tom' });
+  const greeting = trpc.greeting.useQuery({ name: 'Tom' });
 
   return (
     <main className={styles.main}>

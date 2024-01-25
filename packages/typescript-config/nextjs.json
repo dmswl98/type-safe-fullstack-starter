@@ -7,6 +7,9 @@
     "target": "ES2022",
     "lib": ["es2022", "DOM", "DOM.Iterable"],
     "allowJs": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "strict": true,
     "noEmit": true,
     "noUncheckedIndexedAccess": true,
@@ -15,6 +18,8 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "incremental": true,
+    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve"
   }

@@ -1,26 +1,24 @@
-import {
-  INestApplication,
-  Inject,
-  Injectable,
-  forwardRef,
-} from '@nestjs/common';
+import { INestApplication, Injectable } from '@nestjs/common';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import { z } from 'zod';
 import { TrpcService } from './trpc.service';
 
 @Injectable()
 export class TrpcRouter {
-  constructor(
-    @Inject(forwardRef(() => TrpcService)) private readonly trpc: TrpcService,
-  ) {}
+  private readonly trpcService: TrpcService;
+  private readonly appRouter;
 
-  appRouter = this.trpc.router({
-    greeting: this.trpc.procedure
-      .input(z.object({ name: z.string().optional() }))
-      .query(({ input }) => {
-        return { message: `Welcome! ${input.name ? input.name : 'cje'}` };
-      }),
-  });
+  constructor(trpcService: TrpcService) {
+    this.trpcService = trpcService;
+
+    this.appRouter = this.trpcService.router({
+      greeting: this.trpcService.procedure
+        .input(z.object({ name: z.string().optional() }))
+        .query(({ input }) => {
+          return { message: `Welcome! ${input.name ? input.name : 'cje'}` };
+        }),
+    });
+  }
 
   async applyMiddleware(app: INestApplication) {
     app.use(
